@@ -16,7 +16,7 @@ export default function BlocNotas() {
         const keys = await AsyncStorage.getAllKeys(); //obtener todas las llaves
         const filteredKeys = keys.filter(key=>key.startsWith('_note'));
         const storedNotes = await AsyncStorage.multiGet(filteredKeys);
-        //recuperar las notas guardadas en memoria local
+        //recuperar las notas guardadas en memoria local (Almacenamiento interno)
         setNotes(storedNotes.map(([key, value])=>({key, value})))
     }
 
